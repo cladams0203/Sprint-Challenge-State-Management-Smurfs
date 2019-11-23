@@ -3,7 +3,6 @@ import React from 'react'
 export function SmurfCard(props) {
 
     
-    console.log(props)
     return (
         <div>
             <h2> {props.smurf.name} </h2>

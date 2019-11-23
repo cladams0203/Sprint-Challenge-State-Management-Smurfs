@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 import { SmurfList } from './SmurfList';
 import { AddSmurf } from './AddSmurf';
 import { Smurf } from './Smurf';
+import { EditSmurf } from './EditSmurf'
 
 
 export function SmurfContainer () {
@@ -27,13 +28,15 @@ export function SmurfContainer () {
             })
             .catch(err => console.log(err))
     }, [update])
-    console.log(smurfs)
+    
 
     return(
         <SmurfContext.Provider value={{smurfs, addSmurf, setUpdate, update}}>
             <Route exact path='/' component={SmurfList}/>
             <Route exact path='/smurf/:id' component={Smurf} />
             <Route exact path='/addSmurf' component={AddSmurf} />
+            <Route exact path='/editsmurf/:id' component={EditSmurf} />
+            
         </SmurfContext.Provider>
     )
 }
